@@ -1,36 +1,13 @@
-# Pravega and Analytics Connectors Examples
+# Pravega Robot Connectors Example
 
 This repository contains code samples to demonstrate how developers can work with 
-[Pravega](http://pravega.io). We also provide code samples to connect analytics 
-engines such as [Flink](https://flink.apache.org/) and
-[Hadoop](http://hadoop.apache.org/) with Pravega as a storage substrate for data 
-streams. 
+[Pravega](http://pravega.io).
 
 For more information on Pravega, we recommend to read the [documentation and the
 developer guide](http://pravega.io).
 
-# Repository Structure
-
-This repository is divided into sub-projects (`pravega-client-examples`, `flink-connector-examples`
-and `hadoop-connector-examples`), each one addressed to demonstrate a specific component. In these sub-projects, 
-we provide a battery of simple code examples aimed at illustrating how a particular 
-feature or API works. Moreover, we also include a `scenarios` folder that contains 
-more complex applications as sub-projects, which show use-cases exploiting one or multiple components.
-
 > Hint: Have a look to the [terminology and concepts](http://pravega.io/docs/latest/terminology/) in Pravega.
 
-## Pravega Client Examples
-| Example Name  | Description  | Language |
-| ------------- |:-----| :-----|
-| `gettingstarted` | Simple example of how to read/write from/to a Pravega `Stream`. | [Java](pravega-client-examples/src/main/java/io/pravega/example/gettingstarted)
-| `consolerw` | Application that allows users to work with `Stream`, `Transaction` and `StreamCut` APIs via CLI. | [Java](pravega-client-examples/src/main/java/io/pravega/example/consolerw)
-| `noop` | Example of how to add a simple callback executed upon a read event. | [Java](pravega-client-examples/src/main/java/io/pravega/example/noop)
-| `statesynchronizer` | Application that allows users to work with `StateSynchronizer` API via CLI. | [Java](pravega-client-examples/src/main/java/io/pravega/example/statesynchronizer)
-| `streamcuts` | Application examples demonstrating the use of `StreamCut`s via CLI. | [Java](pravega-client-examples/src/main/java/io/pravega/example/streamcuts) 
-
-The related documentation and instructions are [here](pravega-client-examples).
-
-## Flink Connector Examples
 | Example Name  | Description  | Language |
 | ------------- |:-----| :-----|
 | `wordcount` | Counting the words continuously from a Pravega `Stream` to demonstrate the usage of Flink connector for Pravega. | [Java](flink-connector-examples/src/main/java/io/pravega/example/flink/wordcount)
@@ -38,22 +15,6 @@ The related documentation and instructions are [here](pravega-client-examples).
 | `streamcuts` | This sample demonstrates the use of Pravega StreamCuts in Flink applications. | [Java](flink-connector-examples/src/main/java/io/pravega/example/flink/streamcuts)
 
 The related documentation and instructions are [here](flink-connector-examples).
-
-## Hadoop Connector Examples
-| Example Name  | Description  | Language |
-| ------------- |:-----| :-----|
-| `wordcount` | Counts the words from a Pravega `Stream` filled with random text to demonstrate the usage of Hadoop connector for Pravega. | [Java](hadoop-connector-examples/src/main/java/io/pravega/example/hadoop/wordcount)
-| `terasort` | Sort events from an input Pravega `Stream` and then write sorted events to one or more streams. | [Java](hadoop-connector-examples/src/main/java/io/pravega/example/hadoop/terasort)
-
-The related documentation and instructions are [here](hadoop-connector-examples).
-
-## Scenarios
-| Example Name   | Description  | Language |
-| ------------- |:-----| :-----|
-| [`turbineheatsensor`](scenarios/turbine-heat-sensor) | It emulates parallel sensors producing temperature values (writers) and parallel consumers performing real-time statistics (readers) via Pravega client. | [Java](scenarios/turbine-heat-sensor/src/main/java/io/pravega/turbineheatsensor)
-| [`turbineheatprocessor`](scenarios/turbine-heat-processor) | A Flink streaming application for processing temperature data from a Pravega stream produced by the `turbineheatsensor` app. The application computes a daily summary of the temperature range observed on that day by each sensor. | [Java](scenarios/turbine-heat-processor/src/main/java/io/pravega/turbineheatprocessor), [Scala](scenarios/turbine-heat-processor/src/main/scala/io/pravega/turbineheatprocessor)
-| [`anomaly-detection`](scenarios/anomaly-detection) | A Flink streaming application for detecting anomalous input patterns using a finite-state machine. | [Java](scenarios/anomaly-detection/src/main/java/io/pravega/anomalydetection)
-| [`pravega-flink-connector-sql-samples`](scenarios/pravega-flink-connector-sql-samples) | Flink connector table api/sql samples. | [Java](scenarios/pravega-flink-connector-sql-samples/src/main/java/io/pravega/connectors.nytaxi)
 
 
 # Build Instructions
