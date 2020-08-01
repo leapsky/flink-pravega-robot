@@ -61,29 +61,6 @@ $ ./gradlew clean installDist
 ```
 That's it! You are good to go and execute the examples :) 
 
-To ease their execution, most examples can be run either using the gradle wrapper (gradlew) or scripts. 
-The above gradle command automatically creates the execution scripts that can be found under:
-
-```
-pravega-samples/pravega-client-examples/build/install/pravega-client-examples/bin
-```
-
-There is a Linux/Mac script and a Windows (.bat) script for each separate executable.
-
-_Working with `dev` branch_: If you are curious about the most recent sample applications, 
-you may like to try the `dev` version of `pravega-samples` as well. To do so, just clone the 
-`dev` branch instead of `master` (default): 
-
-```
-$ git clone -b dev https://github.com/pravega/pravega-samples.git
-$ cd pravega-samples
-$ ./gradlew clean installDist
-```
-
-The `dev` branch works with Pravega snapshots artifacts published in 
-our [JFrog repository](https://oss.jfrog.org/artifactory/jfrog-dependencies/io/pravega/) instead of 
-using release versions.
-
 # Where to Find Help
 
 Documentation on Pravega and Analytics Connectors:
