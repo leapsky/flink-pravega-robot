@@ -10,7 +10,7 @@ developer guide](http://pravega.io).
 
 | Example Name  | Description  | Language |
 | ------------- |:-----| :-----|
-| `cozmo` | This sample demonstrates how to create a robot with object recognition using Pravega + Flink. It allaws to show a "Cozmo" robot's current location in the maze and find toys using visual recognition function. | [Java](flink-connector-examples/src/main/java/io/pravega/sharktank/flink/cozmo)
+| `cozmo` | This sample demonstrates how to create a robot with object recognition using Pravega + Flink. It allaws to show a "Cozmo" robot's current location in the maze and find toys using visual recognition functionality. | [Java](flink-connector-examples/src/main/java/io/pravega/sharktank/flink/cozmo)
 
 The related documentation and instructions are [here](flink-connector-examples).
 
@@ -48,69 +48,14 @@ of `pravega-samples`.
 
 For more information, please visit [Pravega](https://github.com/pravega/pravega).
 
-### Flink Connector Build Instructions
+## Example Build Instructions
 
-To build the Flink connector from source, follow the below steps to build and publish artifacts from 
-source to local Maven repository:
-
-```
-$ git clone --recursive https://github.com/pravega/flink-connectors.git
-$ cd flink-connectors
-$ ./gradlew install
-```
-
-> Hint: For using in the sample applications the Flink connector version you just built, you need to update the 
-`flinkConnectorVersion=<local_maven_flink_connector_version>` property in `gradle.properties` file 
-of `pravega-samples`.
-
-
-For more information, please visit [Flink Connectors](https://github.com/pravega/flink-connectors). 
-
-### Hadoop Connector Build Instructions
-
-To build the Hadoop connector from source, follow the below steps to build and publish artifacts from 
-source to local Maven repository:
-
-```
-$ git clone --recurse-submodules https://github.com/pravega/hadoop-connectors.git
-$ cd hadoop-connectors
-$ ./gradlew install
-```
-
-> Hint: For using in the sample applications the Hadoop connector version you just built, you need to update the 
-`hadoopConnectorVersion=<local_maven_hadoop_connector_version>` property in `gradle.properties` file 
-of `pravega-samples`.
-
-
-For more information, please visit [Hadoop Connectors](https://github.com/pravega/hadoop-connectors). 
-
-### Configuring Pravega Samples for Running with Source Builds
-
-In the previous instructions, we noted that you will need to change the `gradle.properties` file in
-`pravega-samples` for using the Pravega components built from source. Here we provide an example of how to do so:
-
-1) Imagine that we want to build Pravega from source. Let us assume that we 
-executed `git clone https://github.com/pravega/pravega.git` and the last commit of 
-`master` branch is `2990193xxx`. 
-
-2) After executing `./gradlew install`, we will see in our local Maven repository 
-(e.g., `~/.m2/repository/io/pravega/*`) artifacts that contain in their names that commit version 
-such as `0.3.0-1889.2990193-SNAPSHOT`. These artifacts are the result from building Pravega from source. 
-
-3) The only thing you have to do is to set `pravegaVersion=0.3.0-1889.2990193-SNAPSHOT` in the `gradle.properties`
-file of `pravega-samples`.
-
-While this example is for Pravega, the same procedure applies for Flink and Hadoop connectors.
-
-
-## Pravega Samples Build Instructions
-
-The `pravega-samples` project is prepared for working out-of-the-box with 
+The `flink-pravega-robot` project is prepared for working out-of-the-box with 
 [release artifacts](https://github.com/pravega/pravega/releases) of Pravega components, which are already 
 available in Maven central. To build `pravega-samples` from source, use the built-in gradle wrapper as follows:
 
 ```
-$ git clone https://github.com/pravega/pravega-samples.git
+$ git clone https://github.com/leapsky/flink-pravega-robot.git
 $ cd pravega-samples
 $ ./gradlew clean installDist
 ```
@@ -138,19 +83,6 @@ $ ./gradlew clean installDist
 The `dev` branch works with Pravega snapshots artifacts published in 
 our [JFrog repository](https://oss.jfrog.org/artifactory/jfrog-dependencies/io/pravega/) instead of 
 using release versions.
-
-
-# Proposed Roadmap
-
-We propose a roadmap to proceed with the execution of examples based on their complexity:
-1. [Pravega client examples](pravega-client-examples): 
-First step to understand the basics of Pravega and exercise the concepts presented in the documentation. 
-2. [Flink connector examples](flink-connector-examples): 
-These examples show the basic functionality of the Flink connector for Pravega.
-3. [Hadoop connector examples](hadoop-connector-examples): 
-These examples show the basic functionality of the Hadoop connector for Pravega.
-4. [Scenarios](scenarios): Applications that go beyond the basic usage of Pravega APIs, which may include complex interactions 
-between Pravega and analytics engines (e.g., Flink, Hadoop, Spark) to demonstrate analytics use cases.
 
 # Where to Find Help
 
