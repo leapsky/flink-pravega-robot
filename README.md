@@ -10,7 +10,7 @@ developer guide](http://pravega.io).
 
 | Example Name  | Description  | Language |
 | ------------- |:-----| :-----|
-| `cozmo` | This sample demonstrates how to create a robot with object recognition using Pravega + Flink. It allaws to show a "Cozmo" robot's current location in the maze and find toys using visual recognition functionality. | [Java](flink-connector-examples/src/main/java/io/pravega/sharktank/flink/cozmo)
+| `cozmo` | This sample demonstrates how to create a robot with object recognition using Pravega + Flink. It allows to show a "Cozmo" robot's current location in the maze and find toys using visual recognition functionality. | [Java](flink-connector-examples/src/main/java/io/pravega/sharktank/flink/cozmo)
 
 The related documentation and instructions are [here](flink-connector-examples).
 
